@@ -1,0 +1,41 @@
+
+<% if(data.contact.view === 1) { %>
+<div class="main">
+<div class="con" id="NAV" draggable="true" style="<%= data.contact.style %>">
+    <p id="BASE" style="<%= data.contact.style %>"><a href="/home/<%= person %>"" >Home</a><br />
+    <a href="/home/<%= person %>/contact">Contact</a></p>
+</div>
+
+<br />
+
+<div class="two">
+    <form id="contact-form" method="POST" action="/home/<%= person %>">
+        <label for="style" >Enter Style Preferences:</label>
+        <input type="text" name="style" value="<%= data.contact.style %>">
+        <input type="submit" value="submit">
+    </form>
+</div>
+</div>
+<% } %>
+
+<style>
+    .main {
+        position: relative;
+        display: flex;
+    }
+    .con {
+        position: absolute;
+    }
+    .two {
+        position: relative;
+    }
+</style>
+
+<script>
+    var width = document.getElementById("NAV").style.width;
+    var height = document.getElementById("NAV").style.height;
+
+    document.getElementById("NAV").style.width = width;
+    document.getElementById("NAV").style.height = height;
+</script>
+
